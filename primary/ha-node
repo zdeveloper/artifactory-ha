@@ -1,4 +1,3 @@
 node.id=primary-node
 membership.port=10001
 primary=true
-context.url=http://10.20.14.201:8081/artifactory
