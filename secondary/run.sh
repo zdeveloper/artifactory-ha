@@ -10,4 +10,5 @@ docker run -d \
 	-e DB_PASSWORD=$DB_PASSWORD \
 	-v $S_VOLUME:/var/opt/jfrog/artifactory \
 	-p $S_PORT:8081 \
+	--network=$NETWORK \
 	$S_IMAGE

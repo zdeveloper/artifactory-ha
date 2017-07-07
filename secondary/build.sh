@@ -9,3 +9,4 @@ docker build -t $S_IMAGE .
 
 #delete generated config
 rm ha-node.properties
+rm bootstrap.bundle.tar.gz
