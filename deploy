@@ -1,5 +1,6 @@
 #!/bin/bash
 HOME_DIR=$(pwd)
+if [ -z "$1" ]; then COUNT=1; else COUNT=$1; fi
 cd $HOME_DIR/postgres/
 ./run_postgres.sh
 
@@ -8,5 +9,10 @@ cd $HOME_DIR/primary/
 ./run.sh
 
 cd $HOME_DIR/secondary/
-./build.sh
-./run.sh
+
+
+for (( i=1; i<=$COUNT; i++ ))
+do
+	./build.sh $i
+	./run.sh $i
+done

@@ -15,7 +15,7 @@ docker run -d \
 	--restart=always \
 	$P_IMAGE
 
-echo "sleeping for $SLEEP_TIME seconds"
+echo "sleeping for $SLEEP_TIME seconds, to make sure the artifactory api is up!"
 sleep $SLEEP_TIME
 
 command="curl -uadmin:password -X POST http://localhost:8081/artifactory/api/system/bootstrap_bundle"

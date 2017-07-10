@@ -8,6 +8,7 @@ P_VOLUME=artifactory-data-primary
 #SECONDARY NODE
 S_IMAGE=artifactory-pro-ha-secondary
 S_PORT=8082
+S_NODE_ID=1
 #DB info
 DB_CONTAINER=postgres
 DB_VOLUME=pgdata
