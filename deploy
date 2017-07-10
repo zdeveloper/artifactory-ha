@@ -10,9 +10,8 @@ cd $HOME_DIR/primary/
 
 cd $HOME_DIR/secondary/
 
-
+./build.sh
 for (( i=1; i<=$COUNT; i++ ))
 do
-	./build.sh $i
 	./run.sh $i
 done

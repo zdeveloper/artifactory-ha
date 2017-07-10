@@ -1,4 +1,3 @@
 FROM docker.bintray.io/jfrog/artifactory-pro:5.4.3
 
-COPY ha-node.properties /var/opt/jfrog/artifactory/etc/
 COPY bootstrap.bundle.tar.gz /var/opt/jfrog/artifactory/etc/
