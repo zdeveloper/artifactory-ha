@@ -2,7 +2,6 @@ source ../properties.sh
 
 if [ -z "$1" ]; then ID=1; else ID=$1; fi
 
-
 S_VOLUME=$(docker volume create)
 
 cp ha-node ha-node.properties
