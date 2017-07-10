@@ -15,4 +15,5 @@ docker run \
 	-v $DB_VOLUME:/var/lib/postgresql/data \
 	-p $DB_PORT:5432 \
 	--network=$NETWORK \
+	--restart=always \
 	-d postgres

@@ -1,3 +1,0 @@
-node.id=primary-node
-membership.port=10001
-primary=true

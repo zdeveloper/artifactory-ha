@@ -5,7 +5,6 @@ P_CONTAINER=artifactory-primary
 P_IMAGE=artifactory-pro-ha-primary
 P_PORT=8081
 P_VOLUME=artifactory-data-primary
-P_IP=$P_CONTAINER
 #SECONDARY NODE
 S_IMAGE=artifactory-pro-ha-secondary
 S_PORT=8082

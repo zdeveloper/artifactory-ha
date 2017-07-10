@@ -1,5 +1,4 @@
 #!/bin/bash
-
 HOME_DIR=$(pwd)
 cd $HOME_DIR/postgres/
 ./run_postgres.sh
@@ -10,5 +9,4 @@ cd $HOME_DIR/primary/
 
 cd $HOME_DIR/secondary/
 ./build.sh
-./run.sh
 ./run.sh
