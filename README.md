@@ -6,9 +6,9 @@ The easy way to deploy Artifactory HA (multi-node) via docker. This repo make it
 A newer Docker version that supports docker network.
 
 # installation
-Run the ```deploy``` script to run a primary artifactory node with one secondary node.
+```sh ./deploy #script to run a primary artifactory node with one secondary node```
 
-You can also pass an argument such as ```deploy 5``` script to run a primary artifactory node with 5 secondary nodes
+```sh ./deploy 5 #script to run a primary artifactory node with 5 secondary nodes```
 
 The ```properties.sh``` contains every configuration you might wish to change
 
