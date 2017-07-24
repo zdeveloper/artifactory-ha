@@ -6,7 +6,7 @@ P_CONTAINER=artifactory-primary
 P_IMAGE=artifactory-pro-ha-primary
 P_PORT=8081
 P_VOLUME=artifactory-data-primary
-SLEEP_TIME=30 #seconds
+SLEEP_TIME=50 #seconds
 
 #secondary node
 S_CONTAINER=artifactory-secondary
