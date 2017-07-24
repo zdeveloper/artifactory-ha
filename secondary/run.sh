@@ -17,6 +17,7 @@ docker run -d \
 	--restart=always \
 	$S_IMAGE
 
-#delete generated config
+#copy generated config
 docker cp ha-node.properties $CONTAINER:/var/opt/jfrog/artifactory/etc/ha-node.properties
+#delete generated config
 rm ha-node.properties
