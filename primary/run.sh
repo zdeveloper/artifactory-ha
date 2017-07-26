@@ -25,3 +25,6 @@ docker exec -it $P_CONTAINER sh -c "$command"
 rm ../secondary/bootstrap.bundle.tar.gz || true
 # insert new file
 docker cp $P_CONTAINER:/var/opt/jfrog/artifactory/etc/bootstrap.bundle.tar.gz ../secondary/bootstrap.bundle.tar.gz
+
+#remove the file from the container, because it will cause issues on container restart
+docker exec $P_CONTAINER rm -rf /var/opt/jfrog/artifactory/etc/bootstrap.bundle.tar.gz

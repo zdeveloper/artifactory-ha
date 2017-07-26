@@ -21,3 +21,18 @@ DB_NAME=artifactory
 DB_PORT=5432
 DB_USER=postgres
 DB_PASSWORD="VERY-STRONG-PASSWORD-HERE"
+
+#nginx settings
+NGINX_CONTAINER=nginx
+NGINX_PORT_HTTPS=443
+NGINX_PORT_HTTP=80
+
+#self signed ssl cert fields
+SSL_C=US
+SSL_ST=CA
+SSL_L=MountainView
+SSL_O=HOOLI
+SSL_OU=MAINFRAME
+SSL_CN=127.0.0.1
+SSL_EMAIL=jack.barker@hooli.com
+SSL_DAYS=365

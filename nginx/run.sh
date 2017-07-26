@@ -1,11 +1,6 @@
 source ../properties.sh
 
-NGINX_CONTAINER=nginx
-NGINX_PORT_HTTPS=443
-NGINX_PORT_HTTP=80
-
-
-docker rm -f $NGINX_CONTAINER
+docker rm -f $NGINX_CONTAINER | true
 
 docker run \
 	--name $NGINX_CONTAINER \
