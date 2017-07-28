@@ -13,8 +13,8 @@ sudo openssl req -new \
 	-key server.key	\
 	-out server.csr
 
-sudo openssl x509 -req -sha256 -days $SSL_DAYS -in server.csr -signkey server.key -out server.crt
+sudo openssl x509 -req -sha256 -days $SSL_DAYS -in server.csr -signkey server.key -out server.pem
 
 #copy over the keys to files
-cp server.crt ../primary/server.crt
-cp server.crt ../secondary/server.crt
+cp server.pem ../primary/server.pem
+cp server.pem ../secondary/server.pem

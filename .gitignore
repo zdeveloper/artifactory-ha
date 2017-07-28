@@ -104,6 +104,8 @@ ENV/
 bootstrap.bundle.tar.gz
 
 #certs
-.key
-.csr
-.crt
+*.key
+*.csr
+*.crt
+*.pem
+

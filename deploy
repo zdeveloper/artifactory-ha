@@ -15,3 +15,6 @@ for (( i=1; i<=$COUNT; i++ ))
 do
 	./run.sh $i
 done
+
+cd $HOME_DIR/nginx/
+./run.sh
