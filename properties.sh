@@ -1,5 +1,6 @@
 #network
 NETWORK=artifactory-network
+NET_IP=127.0.0.1
 
 #primary node
 P_CONTAINER=artifactory-primary
@@ -33,6 +34,6 @@ SSL_ST=CA
 SSL_L=MountainView
 SSL_O=HOOLI
 SSL_OU=MAINFRAME
-SSL_CN=127.0.0.1
+SSL_CN=$NET_IP
 SSL_EMAIL=jack.barker@hooli.com
 SSL_DAYS=365
