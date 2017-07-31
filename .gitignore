@@ -108,4 +108,5 @@ bootstrap.bundle.tar.gz
 *.csr
 *.crt
 *.pem
-
+ssl.conf
+properties.sh

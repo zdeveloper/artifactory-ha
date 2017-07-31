@@ -7,12 +7,35 @@ sudo openssl rsa -passin pass:x -in server.pass.key -out server.key
 
 sudo rm server.pass.key
 
-echo "\nSKIP -> challenge password []:]]\n"
+
+cat > ssl.conf  <<-EOF
+[req]
+default_bits = 2048
+prompt = no
+default_md = sha256
+req_extensions = req_ext
+distinguished_name = dn
+ 
+[ dn ]
+C = $SSL_C
+ST = $SSL_ST
+L = $SSL_L
+O = $SSL_O
+OU = $SSL_OU
+emailAddress = $SSL_EMAIL
+CN = $SSL_CN
+ 
+[ req_ext ]
+subjectAltName = @alt_names
+ 
+[ alt_names ]
+DNS.1 = $NET_IP
+EOF
+
 sudo openssl req -new \
-	-subj "/C=$SSL_C/ST=$SSL_ST/L=$SSL_L/O=$SSL_O/OU=$SSL_OU/CN=$SSL_CN/emailAddress=$SSL_EMAIL" \
+	-config ssl.conf \
 	-key server.key	\
-	-out server.csr \
-	-ext SAN=ip:$NET_IP
+	-out server.csr
 
 sudo openssl x509 -req -sha256 -days $SSL_DAYS -in server.csr -signkey server.key -out server.pem
 
