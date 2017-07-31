@@ -12,7 +12,7 @@ sudo openssl req -new \
 	-subj "/C=$SSL_C/ST=$SSL_ST/L=$SSL_L/O=$SSL_O/OU=$SSL_OU/CN=$SSL_CN/emailAddress=$SSL_EMAIL" \
 	-key server.key	\
 	-out server.csr \
-	-ext SAN=$NET_IP
+	-ext SAN=ip:$NET_IP
 
 sudo openssl x509 -req -sha256 -days $SSL_DAYS -in server.csr -signkey server.key -out server.pem
 
