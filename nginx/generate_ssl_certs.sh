@@ -13,8 +13,10 @@ cat > ssl.conf  <<-EOF
 default_bits = 2048
 prompt = no
 default_md = sha256
-req_extensions = req_ext
-distinguished_name = dn
+req_extensions =  v3_req
+basicConstraints = CA:FALSE
+keyUsage = nonRepudiation, digitalSignature, keyEncipherment
+
  
 [ dn ]
 C = $SSL_C
@@ -25,11 +27,11 @@ OU = $SSL_OU
 emailAddress = $SSL_EMAIL
 CN = $SSL_CN
  
-[ req_ext ]
+[ v3_ca ]
 subjectAltName = @alt_names
  
 [ alt_names ]
-DNS.1 = $NET_IP
+IP.1 = $NET_IP
 EOF
 
 sudo openssl req -new \
