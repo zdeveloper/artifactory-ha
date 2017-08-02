@@ -1,3 +1,5 @@
+sudo rm ~/.rnd
+
 source ../properties.sh
 set -x
 
@@ -8,8 +10,8 @@ days                   = 9999
 distinguished_name     = req_distinguished_name
 attributes             = req_attributes
 prompt                 = no
-x509_extensions        = v3_ca
- 
+req_extensions         = v3_ca
+
 [ req_distinguished_name ]
 C = $SSL_C
 ST = $SSL_ST
@@ -23,11 +25,8 @@ emailAddress = $SSL_EMAIL
 challengePassword = password
 
 [ v3_ca ]
-subjectAltName = @alt_names
+subjectAltName = IP:$NET_IP
 authorityInfoAccess = @issuer_info
-
-[ alt_names ]
-IP.1 = $NET_IP
 
 [ issuer_info ]
 OCSP;URI.0 = http://$NET_IP/
@@ -60,9 +59,6 @@ openssl x509 -req -extfile server.cnf -days $SSL_DAYS  -passin "pass:password" -
 
 # verify the server certs.
 openssl verify -CAfile ca-crt.pem server-crt.pem
-
-#openssl x509 -noout -modulus -in server-crt.pem | openssl md5
-#openssl rsa -noout -modulus -in server-key.pem | openssl md5
 
 # copy over the keys to files
 cp server-key.pem  ../nginx/server-key.pem
