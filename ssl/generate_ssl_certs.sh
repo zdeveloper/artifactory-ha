@@ -4,6 +4,8 @@ source ../properties.sh
 set -x
 
 cat > server.cnf  <<-EOF
+subjectAltName = IP:$NET_IP
+
 [req]
 default_bits           = 4096
 days                   = 9999
@@ -55,7 +57,7 @@ openssl genrsa -out server-key.pem 4096
 openssl req -new -config server.cnf -key server-key.pem -out server-csr.pem
 
 # Now let’s sign the request.
-openssl x509 -req -extfile server.cnf -days $SSL_DAYS  -passin "pass:password" -in server-csr.pem -CA ca-crt.pem -CAkey ca-key.pem -CAcreateserial -out server-crt.pem
+openssl x509 -req -days $SSL_DAYS  -passin "pass:password" -in server-csr.pem -CA ca-crt.pem -CAkey ca-key.pem -CAcreateserial -out server-crt.pem -extfile server.cnf 
 
 # verify the server certs.
 openssl verify -CAfile ca-crt.pem server-crt.pem
