@@ -12,7 +12,10 @@ A newer Docker version that supports docker network.
 ./deploy 5 #script to run a primary artifactory node with 5 secondary nodes
 ```
 
+Make sure you change ```properties.sh.example``` to ```properties.sh``` 
 The ```properties.sh``` contains every configuration you might wish to change
+
+Also for self signed certs, Run ```generate_ssl_certs.sh``` from inside the ```ssl``` folder, it will put the needed certs in the apporperiate locations.
 
 # postgres config
 the postgres config is in the ```properties.sh```, make sure to at least change your password.

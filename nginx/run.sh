@@ -6,6 +6,7 @@ docker run \
 	--name $NGINX_CONTAINER \
 	-p $NGINX_PORT_HTTP:80 \
 	-p $NGINX_PORT_HTTPS:443 \
+	-p 5550-5560:5550-5560 \
 	--network=$NETWORK \
 	--restart=always \
 	-d nginx
